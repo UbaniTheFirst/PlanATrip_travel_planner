@@ -1,15 +1,12 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import heroImage from "@/assets/hero-beach.jpg";
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    // TODO: Implement search functionality with Amadeus API
     console.log("Searching for:", searchQuery);
   };
 
@@ -31,7 +28,7 @@ const Hero = () => {
           Discover Your Next
           <span className="block text-tropical drop-shadow-lg">Adventure</span>
         </h1>
-        
+
         <p className="text-xl md:text-2xl text-white/90 mb-12 drop-shadow-md max-w-2xl mx-auto">
           Explore breathtaking destinations, plan perfect trips, and create memories that last forever
         </p>
@@ -44,21 +41,20 @@ const Hero = () => {
               <div className="flex items-center space-x-2">
                 <div className="flex-1 relative">
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                  <Input
+                  <input
                     type="text"
                     placeholder="Where do you want to go to?"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 pr-4 py-6 text-lg border-0 bg-transparent focus:ring-0 placeholder:text-muted-foreground"
+                    className="pl-12 pr-4 py-6 text-lg border-0 bg-transparent focus:outline-none focus:ring-0 placeholder:text-muted-foreground w-full"
                   />
                 </div>
-                <Button
+                <button
                   type="submit"
-                  size="lg"
-                  className="bg-gradient-hero border-0 shadow-soft hover:shadow-hero transition-all duration-300 px-8"
+                  className="inline-flex items-center justify-center bg-gradient-hero text-white text-lg px-8 py-6 rounded-2xl shadow-soft hover:shadow-hero transition-all duration-300"
                 >
                   <Search className="h-5 w-5" />
-                </Button>
+                </button>
               </div>
             </div>
           </div>

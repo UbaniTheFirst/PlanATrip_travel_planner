@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import DestinationCard from "@/components/DestinationCard";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +10,6 @@ import baliImage from "@/assets/bali.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 
 const Index = () => {
-  // Featured destinations data - will be replaced with Amadeus API data
   const featuredDestinations = [
     {
       id: "santorini",
@@ -22,7 +20,7 @@ const Index = () => {
     },
     {
       id: "bali",
-      name: "Bali", 
+      name: "Bali",
       country: "Indonesia",
       description: "Tropical paradise with pristine beaches and rich culture.",
       image: baliImage
@@ -30,26 +28,21 @@ const Index = () => {
     {
       id: "amalfi",
       name: "Amalfi Coast",
-      country: "Italy", 
+      country: "Italy",
       description: "Dramatic coastline with charming villages and Mediterranean views.",
       image: amalfiImage
     }
   ];
 
-  const handleViewDetails = (id: string) => {
-    // TODO: Navigate to destination details page
+  const handleViewDetails = (id) => {
     console.log("View details for destination:", id);
   };
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
       <Navigation />
-      
-      {/* Hero Section */}
       <Hero />
 
-      {/* Featured Destinations Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -61,7 +54,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Destination Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {featuredDestinations.map((destination) => (
               <DestinationCard
@@ -72,22 +64,20 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Call to Action */}
           <div className="text-center">
             <Link to="/explore">
-              <Button 
-                size="lg"
-                className="bg-gradient-hero border-0 shadow-soft hover:shadow-hero transition-all duration-300 text-lg px-8 py-6"
+              <button
+                className="inline-flex items-center justify-center bg-gradient-hero text-white text-lg px-8 py-6 rounded-lg shadow-soft hover:shadow-hero transition-all duration-300"
+                type="button"
               >
                 Explore All Destinations
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              </button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -95,7 +85,7 @@ const Index = () => {
               Why Choose PlanATrip?
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-hero rounded-full flex items-center justify-center">
@@ -106,7 +96,7 @@ const Index = () => {
                 Handpicked destinations with detailed information about attractions, flights, and accommodations.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-hero rounded-full flex items-center justify-center">
                 <span className="text-2xl">✈️</span>
@@ -116,7 +106,7 @@ const Index = () => {
                 Create detailed itineraries with flights, hotels, and activities all in one place.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-hero rounded-full flex items-center justify-center">
                 <span className="text-2xl">💫</span>

@@ -1,8 +1,6 @@
 import Navigation from "@/components/Navigation";
 import DestinationCard from "@/components/DestinationCard";
-import { Input } from "@/components/ui/input";
 import { Search, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import kyotoImage from "@/assets/kyoto.jpg";
 import santoriniImage from "@/assets/santorini.jpg";
@@ -10,7 +8,6 @@ import baliImage from "@/assets/bali.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 
 const Explore = () => {
-  // Sample destination data - will be replaced with Amadeus API data
   const destinations = [
     {
       id: "santorini",
@@ -22,7 +19,7 @@ const Explore = () => {
     {
       id: "kyoto",
       name: "Kyoto",
-      country: "Japan", 
+      country: "Japan",
       description: "Ancient temples and traditional Japanese culture.",
       image: kyotoImage
     },
@@ -30,7 +27,7 @@ const Explore = () => {
       id: "bali",
       name: "Bali",
       country: "Indonesia",
-      description: "Tropical paradise with pristine beaches and rich culture.", 
+      description: "Tropical paradise with pristine beaches and rich culture.",
       image: baliImage
     },
     {
@@ -42,21 +39,24 @@ const Explore = () => {
     }
   ];
 
-  const handleViewDetails = (id: string) => {
+  const handleViewDetails = (id) => {
     console.log("View details for destination:", id);
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center mb-8">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="mr-4">
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
+            <button
+              className="mr-4 p-2 rounded-full hover:bg-gray-100 transition"
+              type="button"
+            >
+              <ArrowLeft className="h-5 w-5 text-muted-foreground" />
+            </button>
           </Link>
           <h1 className="text-3xl font-bold text-primary">Explore Destinations</h1>
         </div>
@@ -65,10 +65,10 @@ const Explore = () => {
         <div className="max-w-2xl mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-            <Input
+            <input
               type="text"
               placeholder="Where do you want to go?"
-              className="pl-12 pr-4 py-4 text-lg bg-card shadow-soft border-border/50"
+              className="pl-12 pr-4 py-4 text-lg rounded-lg bg-card shadow-soft border border-border/50 w-full focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
         </div>
