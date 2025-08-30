@@ -92,7 +92,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-6">
-              Why Choose WonderLust?
+              Why Choose PlanATrip?
             </h2>
           </div>
           
