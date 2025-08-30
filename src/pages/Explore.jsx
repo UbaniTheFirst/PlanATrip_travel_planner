@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import DestinationCard from "@/components/DestinationCard";
 import { Search, ArrowLeft } from "lucide-react";
@@ -8,6 +9,8 @@ import baliImage from "@/assets/bali.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 
 const Explore = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const destinations = [
     {
       id: "santorini",
@@ -43,6 +46,11 @@ const Explore = () => {
     console.log("View details for destination:", id);
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Searching for:", searchQuery);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -62,16 +70,24 @@ const Explore = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mb-8">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+        <form onSubmit={handleSearch} className="max-w-xl mb-8">
+          <div className="relative flex items-center">
             <input
               type="text"
-              placeholder="Where do you want to go?"
-              className="pl-12 pr-4 py-4 text-lg rounded-lg bg-card shadow-soft border border-border/50 w-full focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Search destinations..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="flex-1 px-4 py-3 text-base rounded-lg bg-card shadow-soft border border-border/30
+                         focus:outline-none focus:ring-1 focus:ring-primary text-gray-900 placeholder:text-gray-400"
             />
+            <button
+              type="submit"
+              className="ml-2 inline-flex items-center justify-center bg-gradient-hero text-white text-base px-6 py-3 rounded-lg shadow-soft hover:shadow-hero transition-all duration-300"
+            >
+              <Search className="h-5 w-5" />
+            </button>
           </div>
-        </div>
+        </form>
 
         {/* Destination Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

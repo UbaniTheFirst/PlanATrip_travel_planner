@@ -66,7 +66,7 @@ const Itinerary = () => {
                     <img
                       src={destination.image}
                       alt={destination.title}
-                      className="w-full h-48 md:h-full object-cover"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="flex-1 p-6 flex items-center justify-between">

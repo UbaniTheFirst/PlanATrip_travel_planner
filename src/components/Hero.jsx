@@ -39,15 +39,17 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-hero rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
             <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-hero">
               <div className="flex items-center space-x-2">
-                <div className="flex-1 relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <div className="flex-1">
                   <input
                     type="text"
-                    placeholder="Where do you want to go to?"
+                    placeholder="Where do you want to go?"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 pr-4 py-6 text-lg border-0 bg-transparent focus:outline-none focus:ring-0 placeholder:text-muted-foreground w-full"
+                    className="px-4 py-4 text-lg rounded-lg bg-card shadow-soft w-full 
+             focus:outline-none focus:ring-1 focus:ring-primary/50
+             text-gray-900 placeholder:text-gray-400"
                   />
+
                 </div>
                 <button
                   type="submit"
