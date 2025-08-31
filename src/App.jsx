@@ -5,7 +5,7 @@ import Explore from "./pages/Explore";
 import Itinerary from "./pages/Itinerary";
 import Hotels from "./pages/Hotels";
 import NotFound from "./pages/NotFound";
-import FlightsPage from "./pages/flightspage"; // ✅ Secure Flights page
+import FlightsPage from "./pages/FlightsPage"; // ✅ Secure Flights page
 
 const queryClient = new QueryClient();
 
