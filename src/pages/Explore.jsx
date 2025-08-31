@@ -70,7 +70,7 @@ const Explore = () => {
         </div>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="max-w-xl mb-8">
+        <form onSubmit={handleSearch} className="max-w-xl mb-4">
           <div className="relative flex items-center">
             <input
               type="text"
@@ -88,6 +88,22 @@ const Explore = () => {
             </button>
           </div>
         </form>
+
+        {/* Flights & Hotels */}
+        <div className="flex space-x-6 mb-8">
+          <Link
+            to="/flights"
+            className="text-blue-600 font-medium hover:underline"
+          >
+            ✈️ Search Flights
+          </Link>
+          <Link
+            to="/hotels"
+            className="text-green-600 font-medium hover:underline"
+          >
+            🏨 Search Hotels
+          </Link>
+        </div>
 
         {/* Destination Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
