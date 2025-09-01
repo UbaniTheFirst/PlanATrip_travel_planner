@@ -1,6 +1,11 @@
 import Navigation from "@/components/Navigation";
 import { Trash2, MapPin } from "lucide-react";
 
+// Import images directly
+import kyotoImg from "@/assets/kyoto2.jpg";
+import boraBoraImg from "@/assets/bora_bora.jpg";
+import parisImg from "@/assets/paris.jpg";
+
 const Itinerary = () => {
   // Sample saved destinations - will be managed with state management
   const savedDestinations = [
@@ -8,20 +13,20 @@ const Itinerary = () => {
       id: "1",
       title: "Ancient temples",
       location: "Kyoto, Japan",
-      image: "src/assets/kyoto2.jpg"
+      image: kyotoImg,
     },
     {
       id: "2",
       title: "Overwater villas",
       location: "Maldives",
-      image: "src/assets/bora_bora.jpg"
+      image: boraBoraImg,
     },
     {
       id: "3",
       title: "Arc de Triomphe",
       location: "Paris, France",
-      image: "src/assets/paris.jpg"
-    }
+      image: parisImg,
+    },
   ];
 
   const handleRemove = (id) => {
